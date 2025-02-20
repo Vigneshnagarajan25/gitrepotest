@@ -1,0 +1,16 @@
+import random
+
+def generate_random_numbers(count=5, min_val=1, max_val=100):
+    """Generate a list of random numbers."""
+    return [random.randint(min_val, max_val) for _ in range(count)]
+
+def main():
+    numbers = generate_random_numbers()
+    print("Generated Random Numbers:", numbers)
+    
+    sorted_numbers = sorted(numbers)
+    print("Sorted Numbers:", sorted_numbers)
+
+if __name__ == "__main__":
+    main()
+
