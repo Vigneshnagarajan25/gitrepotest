@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+
+void generateRandomNumbers(std::vector<int>& numbers, int count, int minVal, int maxVal) {
+    for (int i = 0; i < count; ++i) {
+        numbers.push_back(minVal + rand() % (maxVal - minVal + 1));
+    }
+}
+
+int main() {
+    std::srand(std::time(0)); // Seed for random number generation
+    std::vector<int> numbers;
+
+    generateRandomNumbers(numbers, 5, 1, 100);
+
+    std::cout << "Generated Random Numbers: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    std::sort(numbers.begin(), numbers.end());
+    std::cout << "Sorted Numbers: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+
